@@ -10,9 +10,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: {
     template: "%s | LowRacing",
-    default: "LowRacing",
+    default: "Low Racing",
   },
-  description: "O LowRacing é um jogo de corrida para computadores.",
+  description: "O Low Racing é um jogo de corrida para computadores.",
 };
 
 export default function RootLayout({
