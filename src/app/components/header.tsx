@@ -1,10 +1,23 @@
+"use client";
+import { useRouter } from "next/navigation";
 import { Bell, Search } from "lucide-react";
 import Image from "next/image";
 import Redirect from "./redirect";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const home = "/";
 
 export default function Header() {
+  const router = useRouter();
   return (
     <div className="flex items-center justify-between border-b-[1px] border-[#CED4D9]/10 bg-[#1E1E1E] px-10 py-4 text-zinc-300">
       <div>
@@ -46,20 +59,37 @@ export default function Header() {
         />
         <Bell className="size-5" />
         <span>Júlio Developer</span>
-        <Image
-          src="/user.svg"
-          alt="Search"
-          width={40}
-          height={40}
-          quality={100}
-        />
-        <Image
-          src="/arrow.svg"
-          alt="Arrow"
-          width={25}
-          height={25}
-          quality={100}
-        />
+        <Avatar>
+          <AvatarImage src="/user.svg" alt="@shadcn" />
+          <AvatarFallback>user</AvatarFallback>
+        </Avatar>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Image
+              src="/arrow.svg"
+              alt="Arrow"
+              width={25}
+              height={25}
+              quality={100}
+              className="cursor-pointer"
+            />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="mt-6 w-44 border-neutral-700 bg-[#1B1B1B] text-neutral-400">
+            <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
+            <DropdownMenuSeparator className="bg-neutral-700" />
+            <DropdownMenuGroup>
+              <DropdownMenuItem onClick={() => router.push("/profile")}>
+                Perfil
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => router.push("/settings")}>
+                Configurações
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => router.push("/logout")}>
+                Logout
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </div>
   );
