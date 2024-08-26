@@ -28,9 +28,9 @@ export default function FormRecoverPassword() {
   return (
     <form
       onSubmit={handleSubmit(handleRecoverPassword)}
-      className="m-auto w-[420px] space-y-12"
+      className="m-auto w-[420px] space-y-12 text-center"
     >
-      <h1 className="text-4xl font-bold">Recover Password</h1>
+      <h1 className="text-4xl font-bold">Recuperar Conta</h1>
 
       <div className="flex flex-col gap-3">
         <Input {...register("email")} type="email" placeholder="Seu e-mail" />

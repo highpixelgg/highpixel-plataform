@@ -39,7 +39,7 @@ export default function NotFound() {
           </div>
           <button
             onClick={handleClick}
-            className="h-16 w-48 rounded-[10px] bg-gradient-to-r from-[#40D040] to-[#004B00] px-4 py-3 text-xl font-medium uppercase text-[#FFFFFF] transition-all hover:brightness-75"
+            className="h-16 w-48 text-nowrap rounded-[10px] bg-gradient-to-r from-[#40D040] to-[#004B00] px-4 py-3 text-lg font-medium uppercase text-[#FFFFFF] transition-all hover:brightness-75"
           >
             Voltar a Home
           </button>
