@@ -40,29 +40,33 @@ export default function FormRegister() {
       <h1 className="text-4xl font-bold">Register to Low Racing</h1>
 
       <div className="flex flex-col gap-3">
-        <Input {...register("name")} type="text" placeholder="Nome completo" />
-        {errors.name?.message && (
-          <p className="text-red-500">{String(errors.name.message)}</p>
-        )}
+        <Input
+          {...register("name")}
+          type="text"
+          placeholder="Nome completo"
+          className={errors.name && "border-red-500 focus:border-red-500"}
+        />
 
-        <Input {...register("username")} type="text" placeholder="Username" />
-        {errors.username?.message && (
-          <p className="text-red-500">{String(errors.username.message)}</p>
-        )}
+        <Input
+          {...register("username")}
+          type="text"
+          placeholder="Username"
+          className={errors.username && "border-red-500 focus:border-red-500"}
+        />
 
-        <Input {...register("email")} type="email" placeholder="Seu e-mail" />
-        {errors.email?.message && (
-          <p className="text-red-500">{String(errors.email.message)}</p>
-        )}
+        <Input
+          {...register("email")}
+          type="email"
+          placeholder="Seu e-mail"
+          className={errors.email && "border-red-500 focus:border-red-500"}
+        />
 
         <Input
           {...register("password")}
           type="password"
           placeholder="Sua senha"
+          className={errors.password && "border-red-500 focus:border-red-500"}
         />
-        {errors.password?.message && (
-          <p className="text-red-500">{String(errors.password.message)}</p>
-        )}
       </div>
 
       <Button>Cadastrar</Button>
