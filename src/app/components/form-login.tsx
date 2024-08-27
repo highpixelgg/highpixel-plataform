@@ -1,11 +1,11 @@
 "use client";
-import { useRouter } from "next/navigation";
-import Button from "./button";
-import { Input } from "./input";
-import Redirect from "./redirect";
-import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import Redirect from "./redirect";
+import { Input } from "./input";
+import Image from "next/image";
+import Button from "./button";
 import * as z from "zod";
 
 const schema = z.object({
@@ -37,19 +37,20 @@ export default function FormLogin() {
       <h1 className="text-4xl font-bold">Sign in to Low Racing</h1>
 
       <div className="flex flex-col gap-3">
-        <Input {...register("email")} type="email" placeholder="Seu e-mail" />
-        {errors.email?.message && (
-          <p className="text-red-500">{String(errors.email.message)}</p>
-        )}
+        <Input
+          {...register("email")}
+          type="email"
+          placeholder="Seu e-mail"
+          className={errors.email && "border-red-500 focus:border-red-500"}
+        />
 
         <Input
           {...register("password")}
           type="password"
           placeholder="Sua senha"
+          className={errors.password && "border-red-500 focus:border-red-500"}
         />
-        {errors.password?.message && (
-          <p className="text-red-500">{String(errors.password.message)}</p>
-        )}
+
         <div className="space-x-1">
           <span>Esqueci</span>
           <Redirect href="/recover-password" className="text-[#E6DD06]">
