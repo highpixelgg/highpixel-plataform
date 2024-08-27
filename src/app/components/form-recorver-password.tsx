@@ -33,10 +33,12 @@ export default function FormRecoverPassword() {
       <h1 className="text-4xl font-bold">Recuperar Conta</h1>
 
       <div className="flex flex-col gap-3">
-        <Input {...register("email")} type="email" placeholder="Seu e-mail" />
-        {errors.email?.message && (
-          <p className="text-red-500">{String(errors.email.message)}</p>
-        )}
+        <Input
+          {...register("email")}
+          type="email"
+          placeholder="Seu e-mail"
+          className={errors.email && "border-red-500 focus:border-red-500"}
+        />
       </div>
 
       <Button>Recuperar senha</Button>
