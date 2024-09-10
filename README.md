@@ -8,7 +8,7 @@
 
   ## Development
   Main IDE: [Visual Studio Code](https://code.visualstudio.com) <br>
-  Frameworks: [ReactJS](https://react.dev/) and [NextJS](https://nextjs.org/) <br>
+  Frameworks: [NextJS](https://nextjs.org/) <br>
   UI Library: [Shadcn](https://ui.shadcn.com/)<br>
 
   ## Running Project 
