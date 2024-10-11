@@ -1,5 +1,7 @@
   # Meteor 🥏
-
+  ### Preview
+  <img src="https://i.postimg.cc/wjVSLDCD/Home.png"/>
+  
   ## Introduction
   Meteor is the interface for the Low Racing platform. This application was built using React and Next.js to provide a responsive and high-performance experience for users.
 
