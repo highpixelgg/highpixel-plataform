@@ -1,4 +1,5 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import { Bell, Search } from "lucide-react";
 import Image from "next/image";
@@ -13,13 +14,62 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useState, useEffect } from "react";
 
+interface User {
+  id: string;
+  fullName: string;
+  username: string;
+  roles: string[];
+  createdAt: string;
+}
+
+type HeaderProps = {
+  username: string;
+  background: boolean;
+};
 const home = "/";
 
-export default function Header() {
+export default function Header({ background, username }: HeaderProps) {
   const router = useRouter();
+  const [user, setUser] = useState<User | null>(null); // Inicializa com `null` para representar estado de carregamento
+  const [loading, setLoading] = useState(true); // Estado de carregamento
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await fetch(`http://localhost:10000/user/${username}`);
+
+        if (!response.ok) {
+          throw new Error("Erro ao buscar dados do usuário");
+        }
+
+        const data = await response.json();
+        console.log(data);
+        setUser(data);
+      } catch (error) {
+        console.error("Erro na requisição:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProfile();
+  }, [username]);
+
+  if (loading) {
+    return (
+      <div className="mt-96 flex items-center justify-center">Carregando</div>
+    );
+  }
+
   return (
-    <div className="flex items-center justify-between border-b-[1px] border-[#CED4D9]/10 bg-[#1E1E1E] px-10 py-4 text-zinc-300">
+    <div
+      className={`font-poppins flex items-center justify-between px-10 py-4 text-zinc-300 ${
+        background
+          ? "border-b-[1px] border-b-[#CED4D9]/10 bg-[#1E1E1E]"
+          : "border-none bg-none"
+      }`}
+    >
       <div>
         <Redirect href={home}>
           <Image
