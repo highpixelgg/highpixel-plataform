@@ -8,62 +8,65 @@ import Header from "./header";
 export default function ContentMain() {
   const { username } = useParams();
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-[url('/bg.svg')] bg-cover bg-center bg-no-repeat">
+    <div className="h-screen w-screen overflow-hidden bg-[url('/bg.svg')] bg-cover bg-center bg-no-repeat">
       <Header background={false} username={username as string} />
-      <div className="flex flex-row items-center justify-center">
-        <div className="font-scribble flex -rotate-90 flex-col items-center justify-center gap-4 border border-lime-400 text-2xl text-[#989898]">
-          <h3>LOW RACING EM BREVE LOW RACING EM BREVE LOW RACING</h3>
-          <h3>EM BREVE LOW RACING EM BREVE LOW RACING EM BREVE </h3>
-        </div>
-        <div className="flex-col items-center justify-center border border-green-500">
-          <h6 className="font-darker border-[#E6DD06] text-start mr-60 flex h-7 w-80 items-center justify-center rounded-lg border text-xl text-white">
-            10 Pessoas estão conosco!
-          </h6>
-          <h1 className="border font-krona text-6xl font-normal text-white">
-            BEM VINDO AO <br />
-            <span className="gap-12 text-[#00FF4C]">LOW RACING</span>
-          </h1>
-          <p className="font-darker border font-bold text-gray-300">
-            LowRacing é um jogo de corrida para computadores, que tenta atingir
-            o maior público
-            <br />
-            possível e apresenta características únicas. Somos todos jogadores,
-            e por isso
-            <br />
-            conhecemos as necessidades e como executá-las! Garantimos dedicação
-            e cuidado
-            <br />
-            para transformar LowRacing em uma experiência única.
-          </p>
-          <div className="font-darker flex items-center justify-center gap-10 text-xl font-semibold">
-            <button className="h-16 w-56 rounded-2xl bg-[#40D040] text-center text-black">
-              Download Launcher
-            </button>
-            <button className="h-16 w-56 rounded-2xl border border-white text-center">
-              Entrar Discord
-            </button>
+      <main className="relative z-10 mx-auto px-8 pb-16 pt-24">
+        <div className="flex items-center justify-between">
+          <div className="absolute bottom-0 right-1/4 top-0 mr-96 block h-full">
+            <div className="h-full">
+              <div className="-rotate-90 transform space-y-5 whitespace-nowrap text-nowrap font-scribble text-6xl text-[#b3b3b3]/20">
+                <h3 className="text-nowrap">
+                  LOW RACING EM BREVE LOW RACING EM BREVE LOW RACING
+                </h3>
+                <h3 className="text-nowrap">
+                  EM BREVE LOW RACING EM BREVE LOW RACING EM BREVE
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="mx-auto max-w-2xl">
+            <h1 className="font-krona text-6xl font-normal text-white">
+              BEM VINDO AO
+              <span className="block text-green-500">LOW RACING</span>
+            </h1>
+            <p className="mb-8 mt-2 text-gray-400">
+              Low Racing é um jogo de corrida para computadores, que tenta
+              atingir o maior público possível e apresenta características
+              únicas. Somos todos jogadores, e por isso conhecemos as
+              necessidades e como executá-las! Garantimos dedicação e cuidado
+              para transformar LowRacing em uma experiência única.
+            </p>
+            <div className="flex gap-4">
+              <button className="cursor-pointer rounded-md bg-[#40D040] px-6 py-3 text-black transition hover:bg-green-600">
+                Download Launcher
+              </button>
+              <button className="cursor-pointer rounded-md border border-white bg-transparent px-6 py-3 transition hover:bg-white/10">
+                Entrar no Discord
+              </button>
+            </div>
+          </div>
+          <div className="pointer-events-none absolute -top-20 ml-10 w-full">
+            <Image
+              src="/faixas.svg"
+              alt="faixas"
+              width={900}
+              height={357}
+              className="absolute left-2/4"
+              quality={100}
+            />
+          </div>
+          <div className="pointer-events-none relative h-[777px] w-auto">
+            <img
+              src="/person.svg"
+              width={768}
+              height={800}
+              alt="Character"
+              className="h-full w-full object-contain"
+            />
           </div>
         </div>
-        <div className="h-screen w-screen flex-1 flex-col">
-          <Image
-            src="/faixas.svg"
-            alt="faixas"
-            width={905}
-            height={357}
-            className="absolute right-0 top-0"
-            quality={100}
-          />
-          <Image
-            src="/person.svg"
-            alt="personagem"
-            width={768}
-            height={777}
-            className="absolute right-48 top-40"
-            quality={100}
-          />
-        </div>
-        {/* barra gradiente */}
-      </div>
+        <div className="bg-gradient-to-r from-[#09DD09] to-[#E6DD06] h-2 w-full"></div>
+      </main>
     </div>
   );
 }

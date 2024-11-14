@@ -73,8 +73,8 @@ export default function Header({ background, username }: HeaderProps) {
       <div>
         <Redirect href={home}>
           <Image
-            src="/logo-low-racing.png"
-            alt="Search"
+            src="/logo-low-racing.svg"
+            alt="Logo"
             width={100}
             height={132}
             quality={100}
