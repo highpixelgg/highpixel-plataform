@@ -13,17 +13,18 @@ export default function NotFound() {
   return (
     <div>
       <Header />
-      <div className="m-auto mt-[-90px] flex h-screen items-center justify-center gap-14">
+      <div className="mx-auto flex h-screen items-center justify-center gap-14 px-6">
         <Image
           src="/detercontagem.svg"
           alt="404"
-          width={488}
-          height={570}
+          width={400}
+          height={550}
           quality={100}
+          className="-z-10"
         />
         <div className="flex w-[345px] flex-col gap-10">
           <div className="flex flex-col gap-2">
-            <h2 className="text-8xl font-bold text-[#E6DD06]">432...</h2>
+            <h2 className="text-8xl font-bold text-[#E6DD06] -z-10">432...</h2>
             <span className="text-3xl font-bold text-[#FFFFFF]">
               Espere, detenham a contagem!
             </span>
