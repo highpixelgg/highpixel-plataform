@@ -1,9 +1,9 @@
-import Header from "@/app/components/header";
+import ContentMain from "@/app/components/content-main";
 
 export default function Dashboard() {
   return (
     <div className="h-screen w-screen bg-[#1B1B1B]">
-      <Header />
+      <ContentMain />
     </div>
   );
 }

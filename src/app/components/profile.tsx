@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -16,11 +18,54 @@ import {
   Share,
 } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
-export default function ProfileContent() {
+interface User {
+  id: string;
+  fullName: string;
+  username: string;
+  roles: string[];
+  createdAt: string;
+}
+
+type ProfileContentProps = {
+  username: string;
+};
+
+export default function ProfileContent({ username }: { username: string }) {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await fetch(`http://localhost:10000/user/${username}`);
+
+        if (!response.ok) {
+          throw new Error("Erro ao buscar dados do usuário");
+        }
+
+        const data = await response.json();
+        console.log(data);
+        setUser(data);
+      } catch (error) {
+        console.error("Erro na requisição:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProfile();
+  }, [username]);
+
+  if (loading) {
+    return (
+      <div className="mt-96 flex items-center justify-center">Carregando</div>
+    );
+  }
+
   return (
     <div className="m-auto mt-[-110px] flex h-screen items-center justify-center gap-14">
-      <Card className="w-full max-w-3xl bg-black text-white border-zinc-500/50">
+      <Card className="w-full max-w-3xl border-zinc-500/50 bg-black text-white">
         <CardHeader className="relative p-0">
           <Image
             src="/profile-banner.png"
@@ -38,8 +83,8 @@ export default function ProfileContent() {
               className="rounded-full border-4 border-black"
             />
             <div>
-              <h2 className="text-2xl font-bold">Low Racing</h2>
-              <p className="text-sm text-gray-400">@lowracing</p>
+              <h2 className="text-2xl font-bold">{user?.fullName}</h2>
+              <p className="text-sm text-gray-400">@{user?.username}</p>
             </div>
           </div>
           <Button size="sm" className="absolute right-4 top-4">
@@ -53,13 +98,13 @@ export default function ProfileContent() {
               <MapPin className="mr-1 h-4 w-4" />
               Brasil
             </span>
-            <span className="flex items-center">
-              <Globe className="mr-1 h-4 w-4" />
+            <span className="flex cursor-pointer items-center text-sky-500">
+              <Globe className="mr-1 h-4 w-4 text-white" />
               www.lowracing.com
             </span>
             <span className="flex items-center">
               <CalendarIcon className="mr-1 h-4 w-4" />
-              Entrou Agosto 2024
+              {user?.createdAt}
             </span>
           </div>
           <div className="flex space-x-4 text-sm">
@@ -105,9 +150,9 @@ export default function ProfileContent() {
                 />
                 <div className="flex-1">
                   <div className="flex items-center space-x-2">
-                    <h3 className="font-bold">Low Racing</h3>
+                    <h3 className="font-bold">{user?.fullName}</h3>
                     <span className="text-sm text-gray-400">
-                      @lowracing · Agosto 26
+                      @{user?.username} · Agosto 26
                     </span>
                   </div>
                   <p>
@@ -116,16 +161,16 @@ export default function ProfileContent() {
                   </p>
                   <div className="mt-2 flex space-x-4 text-gray-400">
                     <span className="flex items-center">
-                      <MessageSquare className="mr-1 h-4 w-4" />
+                      <MessageSquare className="mr-1 h-4 w-4 cursor-pointer" />
                       10
                     </span>
-                    <span className="flex items-center">
+                    <span className="flex cursor-pointer items-center">
                       <Repeat2 className="mr-1 h-4 w-4" />1
                     </span>
-                    <span className="flex items-center text-green-500">
+                    <span className="flex cursor-pointer items-center text-green-500">
                       <Heart className="mr-1 h-4 w-4" />8
                     </span>
-                    <span className="flex items-center">
+                    <span className="flex cursor-pointer items-center">
                       <Share className="mr-1 h-4 w-4" />
                     </span>
                   </div>
