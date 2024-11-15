@@ -19,7 +19,7 @@ const home = "/";
 export default function Header() {
   const router = useRouter();
   return (
-    <div className="flex items-center justify-between border-b-[1px] border-[#CED4D9]/10 bg-[#1E1E1E] px-10 py-4 text-zinc-300 z-50">
+    <div className="sticky top-0 left-0 flex items-center justify-between border-b-[1px] border-[#CED4D9]/10 bg-[#1E1E1E] px-10 py-4 text-zinc-300 z-50">
       <div>
         <Redirect href={home}>
           <Image
