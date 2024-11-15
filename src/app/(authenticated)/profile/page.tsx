@@ -1,5 +1,5 @@
-import Header from "@/app/components/header";
-import ProfileContent from "@/app/components/profile";
+import Header from "@/app/_components/header";
+import ProfileContent from "@/app/_components/profile";
 
 export default function PageProfile() {
   return (

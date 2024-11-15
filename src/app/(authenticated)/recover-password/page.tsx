@@ -1,5 +1,5 @@
-import Assets from "@/app/assets/images";
-import FormRecoverPassword from "@/app/components/form-recorver-password";
+import Assets from "@/app/_assets/images";
+import FormRecoverPassword from "@/app/_components/form-recorver-password";
 
 export default function RecoverPassword() {
   return (

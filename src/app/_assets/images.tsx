@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Redirect from "../components/redirect";
+import Redirect from "../_components/redirect";
 
 export default function Assets() {
   return (

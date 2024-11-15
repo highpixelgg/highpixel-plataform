@@ -1,5 +1,5 @@
-import Assets from "@/app/assets/images";
-import FormRegister from "@/app/components/form-register";
+import Assets from "@/app/_assets/images";
+import FormRegister from "@/app/_components/form-register";
 
 export default function Register() {
   return (

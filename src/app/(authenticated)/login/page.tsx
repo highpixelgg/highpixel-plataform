@@ -1,6 +1,6 @@
-import Assets from "@/app/assets/images";
-import FooterLogin from "@/app/components/footer-login";
-import FormLogin from "@/app/components/form-login";
+import Assets from "@/app/_assets/images";
+import FooterLogin from "@/app/_components/footer-login";
+import FormLogin from "@/app/_components/form-login";
 
 export default function Login() {
   return (
