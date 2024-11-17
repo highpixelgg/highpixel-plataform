@@ -32,53 +32,62 @@ export default function FormLogin() {
   return (
     <form
       onSubmit={handleSubmit(handleLogin)}
-      className="m-auto w-[420px] space-y-12"
+      className="m-auto w-full max-w-[420px] space-y-8"
     >
-      <h1 className="text-4xl font-bold">Sign in to Low Racing</h1>
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-white">Bem-vindo de volta!</h1>
+        <p className="mt-2 text-zinc-400">Entre com suas credenciais para acessar sua conta</p>
+      </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <Input
           {...register("email")}
           type="email"
           placeholder="Seu e-mail"
-          className={errors.email && "border-red-500 focus:border-red-500"}
+          className={errors.email ? "border-red-500 focus:border-red-500" : "border-zinc-700"}
         />
 
         <Input
           {...register("password")}
           type="password"
           placeholder="Sua senha"
-          className={errors.password && "border-red-500 focus:border-red-500"}
+          className={errors.password ? "border-red-500 focus:border-red-500" : "border-zinc-700"}
         />
 
-        <div className="space-x-1">
+        <div className="space-x-1 text-zinc-400">
           <span>Esqueci</span>
-          <Redirect href="/recover-password" className="text-[#E6DD06]">
+          <Redirect href="/recover-password" className="text-[#E6DD06] hover:brightness-75 transition-all">
             minha senha
           </Redirect>
         </div>
 
-        <Button>Entrar</Button>
+        <Button className="w-full h-12 bg-gradient-to-r from-[#40D040] to-[#004B00] hover:brightness-75 transition-all rounded-md">
+          Entrar
+        </Button>
 
-        <div className="mb-6 space-x-1 text-center">
-          <span>Não tem uma conta ainda? </span>
-          <Redirect href="/register" className="text-[#E6DD06]">
+        <div className="space-x-1 text-center text-zinc-400">
+          <span>Não tem uma conta ainda?</span>
+          <Redirect href="/register" className="text-[#E6DD06] hover:brightness-75 transition-all">
             Registre aqui!
           </Redirect>
         </div>
 
-        <div className="flex items-center justify-center gap-4">
-          <span>Ou continue com: </span>
-          <div className="flex items-center gap-2" title="Em breve">
+        <div className="flex items-center justify-center gap-4 text-zinc-400">
+          <span>Ou continue com:</span>
+          <button 
+            type="button"
+            className="flex items-center gap-2 rounded-[10px] border border-zinc-700 px-4 py-2 hover:bg-zinc-800/50 transition-all" 
+            title="Em breve"
+          >
             <Image
               src="/google.svg"
-              alt="Logo LowRacing"
-              width={30}
-              height={30}
+              alt="Google"
+              width={20}
+              height={20}
               quality={100}
             />
             Google
-          </div>
+          </button>
         </div>
       </div>
     </form>

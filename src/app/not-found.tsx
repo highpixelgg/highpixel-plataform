@@ -7,7 +7,7 @@ export default function NotFound() {
   const router = useRouter();
 
   function handleClick() {
-    router.push("/dashboard");
+    router.push("/");
   }
 
   return (

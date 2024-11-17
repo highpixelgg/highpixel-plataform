@@ -12,6 +12,7 @@ export default function Assets() {
             width={300}
             height={300}
             quality={100}
+            className="absolute top-0 left-0"
           />
         </Redirect>
         <Image
@@ -20,6 +21,7 @@ export default function Assets() {
           width={170}
           height={170}
           quality={100}
+          className="absolute top-0 right-0"
         />
       </div>
       <Image
