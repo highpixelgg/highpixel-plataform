@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,6 +18,13 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        darker: ["var(--font-darker-grotesque)"],
+        krona: ["var(--font-krona-one)"],
+        scribble: ["var(--font-rubik-scribble)"],
+        poppins: ["var(--font-poppins)"],
+        rubik: ["var(--font-rubik)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

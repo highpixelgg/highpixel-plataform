@@ -1,11 +1,7 @@
-import Header from "@/app/_components/header";
-import ProfileContent from "@/app/_components/profile";
+import { user } from "@/data/user";
+import { redirect } from "next/navigation";
 
-export default function PageProfile() {
-  return (
-    <div className="h-screen w-screen bg-[#1B1B1B]">
-      <Header />
-      <ProfileContent />
-    </div>
-  );
+export default function Page() {
+  redirect("/me/" + user.slug);
+  return null;
 }
