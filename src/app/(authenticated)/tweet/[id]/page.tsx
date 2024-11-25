@@ -1,6 +1,6 @@
-import { TimelineItem } from "@/app/components/timeline/timeline-item";
-import { TimelinePost } from "@/app/components/timeline/timeline-post";
-import { GeneralHeader } from "@/app/components/timeline/general-header";
+import { TimelineItem } from "@/app/components/timeline/timeline/timeline-item";
+import { TimelinePost } from "@/app/components/timeline/timeline/timeline-post";
+import { GeneralHeader } from "@/app/components/timeline/ui/general-header";
 import { tweet, tweetValdemir } from "@/data/tweet";
 
 export default function () {

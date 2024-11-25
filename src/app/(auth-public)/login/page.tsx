@@ -1,8 +1,9 @@
-import FormRecoverPassword from "@/app/components/recovery/form-recorver-password";
+import FooterLogin from "@/app/components/login/footer-login";
+import FormLogin from "@/app/components/login/form-login";
 import Image from "next/image";
 import Redirect from "@/app/lib/redirect";
 
-export default function RecoverPassword() {
+export default function Login() {
   return (
     <div className="bg-image-bg relative h-screen w-screen bg-cover bg-center bg-no-repeat">
       <div>
@@ -11,10 +12,10 @@ export default function RecoverPassword() {
             <Image
               src="/logo-low-racing.svg"
               alt="Logo LowRacing"
-              width={300}
-              height={300}
+              width={200}
+              height={200}
               quality={100}
-              className="absolute left-0 top-0"
+              className="absolute top-5 hidden lg:left-5 lg:flex"
             />
           </Redirect>
           <Image
@@ -23,7 +24,7 @@ export default function RecoverPassword() {
             width={170}
             height={170}
             quality={100}
-            className="absolute right-0 top-0"
+            className="absolute right-0 top-0 lg:right-5"
           />
         </div>
         <Image
@@ -32,10 +33,13 @@ export default function RecoverPassword() {
           width={170}
           height={170}
           quality={100}
-          className="absolute bottom-20 left-0"
+          className="absolute bottom-0 mt-5 left-0 lg:bottom-20"
         />
       </div>
-      <FormRecoverPassword />
+      <div className="mx-5 mt-52 flex flex-col items-center justify-center gap-5">
+        <FormLogin />
+        <FooterLogin />
+      </div>
     </div>
   );
 }

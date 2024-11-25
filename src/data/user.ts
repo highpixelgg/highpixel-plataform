@@ -14,7 +14,7 @@ export const valdemir: User = {
   slug: 'valdemir',
   name: 'Valdemir',
   avatar: 'user1.jpg',
-  cover: 'https://i.postimg.cc/rFCs0jj4/4c186ac9ea521494bf148ca873562a70.webp',
+  cover: '/profile-banner.png',
   bio: '👋 Hey, Me chamo Júlio!',
   link: 'https://github.com/JulioDeveloper777',
   postCounter: 149,
