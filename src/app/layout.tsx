@@ -4,6 +4,7 @@ import {
   Darker_Grotesque,
   Rubik_Scribble,
   Poppins,
+  Rubik
 } from "next/font/google";
 import "./globals.css";
 
@@ -25,6 +26,12 @@ const FontDarkerGrotesque = Darker_Grotesque({
   variable: "--font-darker-grotesque",
 });
 
+const FontRubik = Rubik({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-rubik",
+});
+
 const FontRubikScribble = Rubik_Scribble({
   subsets: ["latin"],
   weight: ["400"],
@@ -32,6 +39,9 @@ const FontRubikScribble = Rubik_Scribble({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/lowracing.png",
+  },
   title: {
     template: "%s | LowRacing",
     default: "Low Racing",
@@ -47,9 +57,9 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={`${FontPoppins.variable} ${FontKronaOne.variable} ${FontDarkerGrotesque.variable} ${FontRubikScribble.variable}`}
+      className={`${FontPoppins.variable} ${FontKronaOne.variable} ${FontDarkerGrotesque.variable} ${FontRubikScribble.variable} ${FontRubik.variable}`}
     >
-      <body className="bg-[#1B1B1B]">{children}</body>
+      <body className="bg-black">{children}</body>
     </html>
   );
 }

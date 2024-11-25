@@ -23,6 +23,7 @@ const config = {
         krona: ["var(--font-krona-one)"],
         scribble: ["var(--font-rubik-scribble)"],
         poppins: ["var(--font-poppins)"],
+        rubik: ["var(--font-rubik)"],
       },
       colors: {
         border: "hsl(var(--border))",
