@@ -1,6 +1,6 @@
 import { ProfileFeed } from "@/app/components/profile/profile-feed";
 import { Button } from "@/app/components/ui/button";
-import { GeneralHeader } from "@/app/components/timeline/general-header";
+import { GeneralHeader } from "@/app/components/timeline/ui/general-header";
 import { user } from "@/data/user";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -1,6 +1,6 @@
 "use client";
 
-import { GeneralHeader } from "@/app/components/timeline/general-header";
+import { GeneralHeader } from "@/app/components/timeline/ui/general-header";
 import { user } from "@/data/user";
 import { faCamera } from "@fortawesome/free-solid-svg-icons/faCamera";
 import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";

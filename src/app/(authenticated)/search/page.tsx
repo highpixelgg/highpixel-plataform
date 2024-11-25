@@ -1,6 +1,6 @@
-import { TimelineItem } from "@/app/components/timeline/timeline-item";
-import { GeneralHeader } from "@/app/components/timeline/general-header";
-import { SearchInput } from "@/app/components/timeline/search-input";
+import { TimelineItem } from "@/app/components/timeline/timeline/timeline-item";
+import { GeneralHeader } from "@/app/components/timeline/ui/general-header";
+import { SearchInput } from "@/app/components/timeline/ui/search-input";
 import { tweet } from "@/data/tweet";
 import { redirect } from "next/navigation";
 

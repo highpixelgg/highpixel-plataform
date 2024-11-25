@@ -3,8 +3,7 @@
 import { user } from "@/data/user";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import { Button } from "@/app/components/ui/button";
 
 export const TimelinePost = () => {
   const handleImageUpload = () => {};
@@ -36,7 +35,7 @@ export const TimelinePost = () => {
             <FontAwesomeIcon icon={faImage} className="size-6" />
           </div>
           <div className="w-28">
-            <Button label="Postar" size={2} onClick={handlePostClick} />
+            <Button label="Postar" size={3} onClick={handlePostClick} />
           </div>
         </div>
       </div>

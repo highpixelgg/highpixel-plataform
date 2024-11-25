@@ -34,21 +34,22 @@ export default function FormRegister() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(handleRegister)}
-      className="m-auto w-[420px] space-y-12"
-    >
-      <div className="flex flex-col gap-3">
-        <Input placeholder="Nome completo" />
+    <div className="min-w-min space-y-8 lg:max-w-[420px]">
+      <form
+        onSubmit={handleSubmit(handleRegister)}
+        className="flex flex-col justify-center space-y-12"
+      >
+        <div className="flex flex-col gap-3">
+          <Input placeholder="Nome completo" border />
 
-        <Input placeholder="Username" />
+          <Input placeholder="Username" border />
 
-        <Input placeholder="Seu e-mail" />
+          <Input placeholder="Seu e-mail" border />
 
-        <Input placeholder="Sua senha" />
-      </div>
-
-      <Button label="Cadastrar" size={1} />
-    </form>
+          <Input placeholder="Sua senha" border />
+        </div>
+        <Button label="Cadastrar" size={1} />
+      </form>
+    </div>
   );
 }

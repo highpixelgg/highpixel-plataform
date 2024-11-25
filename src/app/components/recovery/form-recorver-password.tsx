@@ -29,17 +29,15 @@ export default function FormRecoverPassword() {
   return (
     <form
       onSubmit={handleSubmit(handleRecoverPassword)}
-      className="m-auto w-[420px] space-y-12 text-center"
+      className="flex h-screen w-full flex-col items-center justify-center space-y-12 text-center"
     >
-      <h1 className="text-4xl font-bold">Recuperar Conta</h1>
+      <h1 className="text-4xl font-bold text-white">Recuperar Conta</h1>
 
-      <div className="flex flex-col gap-3">
-        <Input
-          placeholder="Seu e-mail"
-        />
+      <div className="flex w-full flex-col items-center justify-center gap-3">
+        <Input placeholder="Seu e-mail" border />
       </div>
 
-      <Button label="Recuperar senha" size={1}/>
+      <Button label="Recuperar senha" size={1} />
     </form>
   );
 }
