@@ -4,7 +4,7 @@ import {
   Darker_Grotesque,
   Rubik_Scribble,
   Poppins,
-  Rubik
+  Rubik,
 } from "next/font/google";
 import "./globals.css";
 
