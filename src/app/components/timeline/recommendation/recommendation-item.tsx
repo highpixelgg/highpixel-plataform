@@ -4,6 +4,7 @@ import { User } from "@/types/user";
 import Link from "next/link";
 import { Button } from "@/app/components/ui/button";
 import { useState } from "react";
+import Image from "next/image";
 
 type Props = {
   user: User;
@@ -19,7 +20,12 @@ export const RecommendationItem = ({ user }: Props) => {
     <div className="flex items-center">
       <div className="mr-2 size-10 overflow-hidden rounded-full">
         <Link href={`/${user.slug}`}>
-          <img src={user.avatar} alt={user.name} className="size-full" />
+          <Image
+            src={user.avatar}
+            alt={user.name}
+            fill
+            className="size-full"
+          />
         </Link>
       </div>
       <div className="flex-1 overflow-hidden">

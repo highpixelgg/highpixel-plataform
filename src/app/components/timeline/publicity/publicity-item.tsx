@@ -4,7 +4,6 @@ import { User } from "@/types/user";
 import Link from "next/link";
 import { Button } from "@/app/components/ui/button";
 import Image from "next/image";
-import { Tweet } from "@/types/tweet";
 
 type Props = {
   user: User;
@@ -16,7 +15,12 @@ export const PublicityItem = ({ user, description, url }: Props) => {
   return (
     <div className="flex w-96 items-center">
       <div className="mr-2 size-10 h-auto w-36 overflow-hidden rounded-xl">
-        <img src={user.cover} alt="lowracing" width={300} height={300} />
+        <Image
+          src={user.cover ?? ""}
+          alt="lowracing"
+          fill
+          className="object-cover"
+        />
       </div>
       <div className="flex-1 overflow-hidden">
         <h3 className="text-white">{user.name}</h3>

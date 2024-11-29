@@ -5,6 +5,7 @@ import { user } from "@/data/user";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import Image from 'next/image'
 
 export default function Page() {
   const isMe = true;
@@ -21,11 +22,14 @@ export default function Page() {
           style={{ backgroundImage: "url(" + user.cover + ")" }}
         ></div>
         <div className="-mt-12 flex items-end justify-between px-6">
-          <img
-            src={user.avatar}
-            alt={user.name}
-            className="size-24 rounded-full"
-          />
+          <div className="relative size-24">
+            <Image
+              src={user.avatar}
+              alt={user.name}
+              fill
+              className="rounded-full object-cover"
+            />
+          </div>
           <div className="w-32">
             {isMe && (
               <Link href={`/${user.slug}/edit`}>

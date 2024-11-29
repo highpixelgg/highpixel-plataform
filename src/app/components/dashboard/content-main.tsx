@@ -53,12 +53,13 @@ export default function ContentMain() {
             />
           </div>
           <div className="absolute top-16 hidden lg:pointer-events-none lg:relative lg:flex lg:h-[777px] lg:w-auto">
-            <img
+            <Image
               src="/person.svg"
+              alt="character"
               width={768}
               height={800}
-              alt="Character"
               className="h-full w-full object-contain"
+              quality={100}
             />
           </div>
         </div>

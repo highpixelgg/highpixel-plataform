@@ -4,6 +4,7 @@ import { user } from "@/data/user";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@/app/components/ui/button";
+import Image from 'next/image'
 
 export const TimelinePost = () => {
   const handleImageUpload = () => {};
@@ -12,11 +13,7 @@ export const TimelinePost = () => {
   return (
     <div className="flex gap-6 border-b-2 border-[#161616] px-8 py-6 text-[#72767A]">
       <div>
-        <img
-          src={user.avatar}
-          alt={user.name}
-          className="size-12 rounded-full"
-        />
+        <Image src={user.avatar} alt={user.name} className="size-12 rounded-full" />
       </div>
       <div className="flex-1">
         <div

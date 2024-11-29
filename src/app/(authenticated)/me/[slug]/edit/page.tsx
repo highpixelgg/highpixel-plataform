@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Input } from "@/app/components/ui/input";
 import { Button } from "@/app/components/ui/button";
 import { TextArea } from "@/app/components/ui/textarea";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -28,11 +29,14 @@ export default function Page() {
           </div>
         </div>
         <div className="-mt-12 px-6">
-          <img
-            src={user.avatar}
-            alt={user.name}
-            className="size-24 rounded-full"
-          />
+          <div className="relative size-24">
+            <Image
+              src={user.avatar}
+              alt={user.name}
+              fill
+              className="rounded-full object-cover"
+            />
+          </div>
           <div className="-mt-24 flex size-24 items-center justify-center">
             <div className="flex size-12 cursor-pointer items-center justify-center rounded-full bg-black/80">
               <FontAwesomeIcon icon={faCamera} className="size-6" />
