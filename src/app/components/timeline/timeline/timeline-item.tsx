@@ -10,6 +10,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useState } from "react";
+import Image from 'next/image'
 
 type Props = {
   tweet: Tweet;
@@ -26,11 +27,7 @@ export const TimelineItem = ({ tweet, hideComments }: Props) => {
     <div className="bg --font-rubik flex w-full gap-2 border-b-2 border-[#161616] p-6 font-medium text-white">
       <div className="mr-3 flex">
         <Link href={`/${tweet.user.slug}`}>
-          <img
-            src={tweet.user.avatar}
-            alt={tweet.user.name}
-            className="size-10 rounded-full"
-          />
+          <Image src={tweet.user.avatar} alt={tweet.user.name} className="size-10 rounded-full" />
         </Link>
       </div>
       <div className="flex-1">
@@ -47,7 +44,7 @@ export const TimelineItem = ({ tweet, hideComments }: Props) => {
         </div>
         {tweet.image && (
           <div className="w-full">
-            <img src={tweet.image} alt="" className="w-full rounded-2xl" />
+            <Image src={tweet.image} alt="" className="w-full rounded-2xl" />
           </div>
         )}
         <div className="--font-rubik mt-6 flex gap-10 font-medium text-[#72767A]">

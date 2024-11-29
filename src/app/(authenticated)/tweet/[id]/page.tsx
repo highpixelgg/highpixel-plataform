@@ -3,7 +3,7 @@ import { TimelinePost } from "@/app/components/timeline/timeline/timeline-post";
 import { GeneralHeader } from "@/app/components/timeline/ui/general-header";
 import { tweet, tweetValdemir } from "@/data/tweet";
 
-export default function () {
+export default function Page() {
   return (
     <div className="text-white">
       <GeneralHeader backHref="/">
