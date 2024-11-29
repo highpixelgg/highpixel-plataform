@@ -27,7 +27,7 @@ export const TimelineItem = ({ tweet, hideComments }: Props) => {
     <div className="bg --font-rubik flex w-full gap-2 border-b-2 border-[#161616] p-6 font-medium text-white">
       <div className="mr-3 flex">
         <Link href={`/${tweet.user.slug}`}>
-          <Image src={tweet.user.avatar} alt={tweet.user.name} className="size-10 rounded-full" />
+          <Image src={tweet.user.avatar} alt={tweet.user.name} width={100} className="size-10 rounded-full" />
         </Link>
       </div>
       <div className="flex-1">

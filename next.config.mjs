@@ -14,6 +14,16 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.postimg.cc',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   async redirects() {
     return [];
   }
