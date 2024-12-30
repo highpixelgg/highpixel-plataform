@@ -11,17 +11,17 @@ type Props = {
 };
 
 export const SearchInput = ({ defaultValue, hideOnSearch }: Props) => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [searchInput, setSearchInput] = useState(defaultValue ?? "");
+  // const router = useRouter();
+  // const pathname = usePathname();
+  // const [searchInput, setSearchInput] = useState(defaultValue ?? "");
 
-  const handleSearchEnter = () => {
-    if (searchInput) {
-      router.push("/search?q=" + encodeURIComponent(searchInput));
-    }
-  };
+  // const handleSearchEnter = () => {
+  //   if (searchInput) {
+  //     router.push("/search?q=" + encodeURIComponent(searchInput));
+  //   }
+  // };
 
-  if (hideOnSearch && pathname === "/search") return null;
+  // if (hideOnSearch && pathname === "/search") return null;
 
   return (
     <Input
@@ -29,9 +29,9 @@ export const SearchInput = ({ defaultValue, hideOnSearch }: Props) => {
       icon={faMagnifyingGlass}
       filled
       border
-      value={searchInput}
-      onChange={(t) => setSearchInput(t)}
-      onEnter={handleSearchEnter}
+      // value={searchInput}
+      // onChange={(t) => setSearchInput(t)}
+      // onEnter={handleSearchEnter}
     />
   );
 };
