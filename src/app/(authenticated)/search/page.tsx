@@ -6,12 +6,12 @@ import { tweet } from "@/data/tweet";
 
 type Props = {
   searchParams: {
-    q: string | undefined;
+    q?: string;
   };
 };
 
 export default function Search({ searchParams }: Props) {
-  if (!searchParams.q) redirect('/')
+  if (!searchParams.q) redirect('/');
 
   return (
     <div>
