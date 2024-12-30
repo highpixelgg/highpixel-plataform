@@ -16,7 +16,7 @@ export const PublicityArea = () => {
         <PublicityItem
           user={valdemir}
           description="Novo DSW Painel"
-          url="/google.com"
+          url="/youtube.com"
         />
         <PublicityItemSkeleton />
       </div>

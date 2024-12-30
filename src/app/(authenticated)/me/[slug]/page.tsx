@@ -1,11 +1,11 @@
 import { ProfileFeed } from "@/app/components/profile/profile-feed";
-import { Button } from "@/app/components/ui/button";
 import { GeneralHeader } from "@/app/components/timeline/ui/general-header";
+import { Button } from "@/app/components/ui/button";
 import { user } from "@/data/user";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
-import Image from 'next/image'
 
 export default function Page() {
   const isMe = true;
@@ -22,11 +22,12 @@ export default function Page() {
           style={{ backgroundImage: "url(" + user.cover + ")" }}
         ></div>
         <div className="-mt-12 flex items-end justify-between px-6">
-          <div className="relative size-24">
+          <div className="relative h-24 w-24">
             <Image
               src={user.avatar}
               alt={user.name}
               fill
+              quality={100}
               className="rounded-full object-cover"
             />
           </div>
