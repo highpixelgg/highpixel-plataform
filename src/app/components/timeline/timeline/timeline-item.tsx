@@ -1,16 +1,16 @@
 "use client";
 
-import { Tweet } from "@/types/tweet";
 import { formatRelativeTime } from "@/app/lib/format-relative";
+import { Tweet } from "@/types/tweet";
 import { faComment, faHeart } from "@fortawesome/free-regular-svg-icons";
 import {
-  faRetweet,
   faHeart as faHeartFilled,
+  faRetweet,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Image from 'next/image'
 
 type Props = {
   tweet: Tweet;
@@ -27,7 +27,13 @@ export const TimelineItem = ({ tweet, hideComments }: Props) => {
     <div className="bg --font-rubik flex w-full gap-2 border-b-2 border-[#161616] p-6 font-medium text-white">
       <div className="mr-3 flex">
         <Link href={`/${tweet.user.slug}`}>
-          <Image src={tweet.user.avatar} alt={tweet.user.name} width={100} className="size-10 rounded-full" />
+          <Image
+            src={tweet.user.avatar}
+            alt={tweet.user.name}
+            width={45}
+            height={45}
+            className="rounded-full"
+          />
         </Link>
       </div>
       <div className="flex-1">
@@ -44,9 +50,17 @@ export const TimelineItem = ({ tweet, hideComments }: Props) => {
         </div>
         {tweet.image && (
           <div className="w-full">
-            <Image src={tweet.image} alt="" className="w-full rounded-2xl" />
+            <Image
+              src={tweet.image}
+              alt="post"
+              width={600} 
+              height={400}
+              quality={100}
+              className="rounded-2xl object-cover"
+            />
           </div>
         )}
+
         <div className="--font-rubik mt-6 flex gap-10 font-medium text-[#72767A]">
           {!hideComments && (
             <div className="">

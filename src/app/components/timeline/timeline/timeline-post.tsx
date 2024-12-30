@@ -12,8 +12,8 @@ export const TimelinePost = () => {
 
   return (
     <div className="flex gap-6 border-b-2 border-[#161616] px-8 py-6 text-[#72767A]">
-      <div>
-        <Image src={user.avatar} alt={user.name} className="size-12 rounded-full" />
+      <div className="w-11 h-11 relative">
+        <Image src={user.avatar} alt={user.name} className="size-12 rounded-full" fill/>
       </div>
       <div className="flex-1">
         <div

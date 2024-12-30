@@ -1,9 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { Bell, Search, Menu } from "lucide-react";
-import Image from "next/image";
-import Redirect from "../../lib/redirect";
 import {
   Avatar,
   AvatarFallback,
@@ -19,6 +15,11 @@ import {
   DropdownMenuTrigger,
 } from "@/app/components/ui/dropdown-menu";
 import { user } from "@/data/user";
+import { Bell, Menu, Search } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import LogoLR from "../../../../public/logo-low-racing.svg";
+import Redirect from "../../lib/redirect";
 
 type HeaderProps = {
   background: boolean;
@@ -39,7 +40,7 @@ export default function Header({ background }: HeaderProps) {
       <div>
         <Redirect href={"/dashboard"}>
           <Image
-            src="/logo-low-racing.svg"
+            src={LogoLR}
             alt="Logo"
             width={100}
             height={132}
@@ -79,7 +80,7 @@ export default function Header({ background }: HeaderProps) {
           <Bell className="text-zinc-300" size={20} />
           <span>Júlio Developer</span>
           <Avatar>
-            <AvatarImage src="/valdemir.png" alt="user" />
+            <AvatarImage src="https://i.postimg.cc/wjqdc3XL/user1.jpg" alt="user" />
             <AvatarFallback>user</AvatarFallback>
           </Avatar>
           <DropdownMenu>
