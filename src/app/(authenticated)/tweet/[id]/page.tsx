@@ -5,8 +5,8 @@ import { tweet, tweetValdemir } from "@/data/tweet";
 
 export default function Page() {
   return (
-    <div className="text-white">
-      <GeneralHeader backHref="/">
+    <div className="text-white w-screen">
+      <GeneralHeader backHref="/home">
         <div className="text-lg font-bold">Voltar</div>
       </GeneralHeader>
       <div className="border-t-2 border-[#161616]">

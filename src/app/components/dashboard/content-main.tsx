@@ -1,12 +1,12 @@
 "use client";
 
+import { Header } from "@/app/components/ui/header";
 import Image from "next/image";
-import Header from "@/app/components/ui/header";
 
 export default function ContentMain() {
   return (
     <div className="h-screen w-screen overflow-hidden bg-[url('/bg.svg')] bg-cover bg-center bg-no-repeat">
-      <Header background={false} />
+      <Header />
       <main className="relative z-10 mx-auto px-8 pb-16 pt-24">
         <div className="flex items-center justify-between">
           <div className="absolute bottom-0 right-1/4 top-0 mr-96 block h-full">
@@ -34,15 +34,15 @@ export default function ContentMain() {
               para transformar LowRacing em uma experiência única.
             </p>
             <div className="flex gap-4">
-              <button className="cursor-pointer rounded-md bg-[#40D040] px-6 py-3 font-medium text-black transition hover:bg-green-600">
+              <button className="rounded-md bg-[#40D040] px-6 py-3 font-medium text-black transition hover:bg-green-600">
                 Download Launcher
               </button>
-              <button className="cursor-pointer rounded-md border border-white bg-transparent px-6 py-3 font-medium text-white transition hover:bg-white/10">
+              <button className="rounded-md border border-white bg-transparent px-6 py-3 font-medium text-white transition hover:bg-white/10">
                 Entrar no Discord
               </button>
             </div>
           </div>
-          <div className="pointer-events-none hidden lg:absolute lg:-top-20 lg:ml-10 lg:w-full">
+          <div className="hidden lg:absolute lg:-top-20 lg:ml-10 lg:w-full">
             <Image
               src="/faixas.svg"
               alt="faixas"
@@ -52,14 +52,14 @@ export default function ContentMain() {
               quality={100}
             />
           </div>
-          <div className="absolute top-16 hidden lg:pointer-events-none lg:relative lg:flex lg:h-[777px] lg:w-auto">
+          <div className="absolute top-16 hidden lg:relative lg:flex lg:h-[600px] lg:w-auto">
             <Image
               src="/person.svg"
               alt="character"
-              width={768}
-              height={800}
+              width={1}
+              height={1}
               className="h-full w-full object-contain"
-              quality={100}
+              quality={80}
             />
           </div>
         </div>

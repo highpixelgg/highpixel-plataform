@@ -1,19 +1,19 @@
 "use client";
 
 import { GeneralHeader } from "@/app/components/timeline/ui/general-header";
+import { AvatarUser } from "@/app/components/ui/avatar";
+import { Button } from "@/app/components/ui/button";
+import { Input } from "@/app/components/ui/input";
+import { TextArea } from "@/app/components/ui/textarea";
 import { user } from "@/data/user";
 import { faCamera } from "@fortawesome/free-solid-svg-icons/faCamera";
 import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Input } from "@/app/components/ui/input";
-import { Button } from "@/app/components/ui/button";
-import { TextArea } from "@/app/components/ui/textarea";
-import Image from "next/image";
 
 export default function Page() {
   return (
-    <div className="w-screen text-white lg:w-full">
-      <GeneralHeader backHref="/">
+    <div className="w-screen  text-white lg:max-w-xl">
+      <GeneralHeader backHref="/profile">
         <div className="text-lg font-bold">Editar Perfil</div>
       </GeneralHeader>
       <section className="border-b-2 border-[#161616]">
@@ -30,14 +30,14 @@ export default function Page() {
         </div>
         <div className="-mt-12 px-6">
           <div className="relative size-24">
-            <Image
+            <AvatarUser
               src={user.avatar}
-              alt={user.name}
-              fill
-              className="rounded-full object-cover"
+              isBorded={false}
+              size="lg"
+              className="h-24 w-24 object-cover"
             />
           </div>
-          <div className="-mt-24 flex size-24 items-center justify-center">
+          <div className="-mt-24 flex size-24 items-center justify-center absolute">
             <div className="flex size-12 cursor-pointer items-center justify-center rounded-full bg-black/80">
               <FontAwesomeIcon icon={faCamera} className="size-6" />
             </div>
@@ -53,7 +53,7 @@ export default function Page() {
             border={true}
           />
         </label>
-        <label htmlFor="">
+        <label>
           <p className="mb-2 text-lg text-gray-500">Bio</p>
           <TextArea
             placeholder="Escreva uma biografia"
@@ -61,11 +61,11 @@ export default function Page() {
             value={user.bio}
           />
         </label>
-        <label htmlFor="">
+        <label>
           <p className="mb-2 text-lg text-gray-500">Link</p>
           <Input placeholder="Digite um Link" value={user.link} border={true} />
         </label>
-        <Button label="Salvar alterações" size={1} />
+        <Button label="Salvar alterações" size={1} background="white" />
       </section>
     </div>
   );

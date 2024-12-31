@@ -1,9 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
+import Redirect from "@/app/lib/redirect";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
@@ -34,21 +35,27 @@ export default function FormRegister() {
   }
 
   return (
-    <div className="min-w-min space-y-8 lg:max-w-[420px]">
+    <div className="min-w-min lg:max-w-[420px]">
       <form
         onSubmit={handleSubmit(handleRegister)}
-        className="flex flex-col justify-center space-y-12"
+        className="flex flex-col justify-center space-y-8"
       >
         <div className="flex flex-col gap-3">
           <Input placeholder="Nome completo" border />
-
           <Input placeholder="Username" border />
-
           <Input placeholder="Seu e-mail" border />
-
           <Input placeholder="Sua senha" border />
         </div>
-        <Button label="Cadastrar" size={1} />
+        <Button label="Cadastrar" size={1} background="white" />
+        <div className="space-x-1 text-center text-zinc-400">
+          <span>Já tem uma conta?</span>
+          <Redirect
+            href="/signin"
+            className="text-[#E6DD06] transition-all hover:brightness-75"
+          >
+            Entre aqui!
+          </Redirect>
+        </div>
       </form>
     </div>
   );

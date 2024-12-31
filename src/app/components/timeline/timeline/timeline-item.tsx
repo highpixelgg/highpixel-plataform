@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { AvatarUser } from "../../ui/avatar";
 
 type Props = {
   tweet: Tweet;
@@ -25,18 +26,12 @@ export const TimelineItem = ({ tweet, hideComments }: Props) => {
 
   return (
     <div className="bg --font-rubik flex w-full gap-2 border-b-2 border-[#161616] p-6 font-medium text-white">
-      <div className="mr-3 flex">
-        <Link href={`/${tweet.user.slug}`}>
-          <Image
-            src={tweet.user.avatar}
-            alt={tweet.user.name}
-            width={45}
-            height={45}
-            className="rounded-full"
-          />
+      <div className=" flex">
+        <Link href={`/me/${tweet.user.slug}`}> {/*   (verify profile is me from edit url)   */}
+          <AvatarUser isBorded={true} src={tweet.user.avatar} />
         </Link>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 ml-1">
         <div className="flex flex-wrap items-center gap-x-3">
           <div className="text-lg font-bold">
             <Link href={`/${tweet.user.slug}`}>{tweet.user.name}</Link>
@@ -53,7 +48,7 @@ export const TimelineItem = ({ tweet, hideComments }: Props) => {
             <Image
               src={tweet.image}
               alt="post"
-              width={600} 
+              width={600}
               height={400}
               quality={100}
               className="rounded-2xl object-cover"

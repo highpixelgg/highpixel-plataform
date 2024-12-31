@@ -1,5 +1,6 @@
 import { ProfileFeed } from "@/app/components/profile/profile-feed";
 import { GeneralHeader } from "@/app/components/timeline/ui/general-header";
+import { AvatarUser } from "@/app/components/ui/avatar";
 import { Button } from "@/app/components/ui/button";
 import { user } from "@/data/user";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
@@ -11,8 +12,8 @@ export default function Page() {
   const isMe = true;
 
   return (
-    <div className="bg-black text-white">
-      <GeneralHeader backHref="/">
+    <div className="w-screen lg:max-w-xl bg-black text-white">
+      <GeneralHeader backHref="/home">
         <div className="text-lg font-bold">{user.name}</div>
         <div className="text-xs text-gray-500">{user.postCounter} posts</div>
       </GeneralHeader>
@@ -23,18 +24,17 @@ export default function Page() {
         ></div>
         <div className="-mt-12 flex items-end justify-between px-6">
           <div className="relative h-24 w-24">
-            <Image
-              src={user.avatar}
-              alt={user.name}
-              fill
-              quality={100}
-              className="rounded-full object-cover"
-            />
+            <AvatarUser src={user.avatar} isBorded={false} size="lg" className="w-24 h-24"/>
           </div>
           <div className="w-32">
             {isMe && (
-              <Link href={`/${user.slug}/edit`}>
-                <Button label="Editar Perfil" size={2} borderounded={true} />
+              <Link href={`/me/${user.slug}/edit`}>
+                <Button
+                  label="Editar Perfil"
+                  size={2}
+                  borderounded={true}
+                  background="white"
+                />
               </Link>
             )}
             {!isMe && <Button label="Seguir" size={2} />}
@@ -48,7 +48,7 @@ export default function Page() {
             <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={faLink} className="size-5" />
               <Link
-                className="font-rubik font-extralight text-blue-500 hover:text-blue-400"
+                className="font-rubik font-extralight text-blue-500 hover:text-blue-400 text-sm lg:text-base"
                 target="_blank"
                 href={user.link}
               >
@@ -56,11 +56,11 @@ export default function Page() {
               </Link>
             </div>
           )}
-          <div className="my-5 flex gap-6 font-rubik">
-            <div className="flex gap-2 text-xl text-[#72767A]">
+          <div className="my-5 flex gap-3 font-rubik text-lg lg:text-xl">
+            <div className="flex gap-2 text-[#72767A]">
               <span className="font-medium text-white">32</span>Seguindo
             </div>
-            <div className="flex gap-2 text-xl font-normal text-[#72767A]">
+            <div className="flex gap-2 font-normal text-[#72767A]">
               <span className="font-medium text-white">65,8k</span>Seguidores
             </div>
           </div>

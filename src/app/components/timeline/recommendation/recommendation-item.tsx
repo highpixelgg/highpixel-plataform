@@ -1,10 +1,10 @@
 "use client";
 
+import { Button } from "@/app/components/ui/button";
 import { User } from "@/types/user";
 import Link from "next/link";
-import { Button } from "@/app/components/ui/button";
 import { useState } from "react";
-import Image from "next/image";
+import { AvatarUser } from "../../ui/avatar";
 
 type Props = {
   user: User;
@@ -19,17 +19,9 @@ export const RecommendationItem = ({ user }: Props) => {
 
   return (
     <div className="flex items-center">
-      <div className="mr-2 w-10 h-10 overflow-hidden rounded-full relative">
-        <Link href={`/${user.slug}`}>
-          <Image
-            src={user.avatar}
-            alt={user.name}
-            width={100}
-            height={100}
-            className="object-cover"
-          />
-        </Link>
-      </div>
+      <Link href={`/${user.slug}`} className="object-cover mr-3">
+        <AvatarUser isBorded={true} src={user.avatar} color="success" />
+      </Link>
       <div className="flex-1 overflow-hidden">
         <Link
           href={`/${user.slug}`}
@@ -41,7 +33,12 @@ export const RecommendationItem = ({ user }: Props) => {
       </div>
       <div className="ml-5 w-20 pl-2">
         {!following && (
-          <Button label="Seguir" onClick={handleFollowButton} size={3} />
+          <Button
+            label="Seguir"
+            onClick={handleFollowButton}
+            size={4}
+            background="white"
+          />
         )}
       </div>
     </div>
@@ -51,7 +48,7 @@ export const RecommendationItem = ({ user }: Props) => {
 export const RecommendationItemSkeleton = () => {
   return (
     <div className="flex animate-pulse items-center">
-      <div className="mr-2 w-10 h-10 rounded-full bg-gray-600"></div>
+      <div className="mr-2 h-10 w-10 rounded-full bg-gray-600"></div>
       <div className="flex flex-1 flex-col gap-1">
         <div className="h-4 w-3/4 bg-gray-600"></div>
         <div className="h-4 w-1/4 bg-gray-600"></div>

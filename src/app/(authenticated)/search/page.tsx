@@ -4,22 +4,21 @@ import { SearchInput } from "@/app/components/timeline/ui/search-input";
 import { tweet } from "@/data/tweet";
 import { redirect } from "next/navigation";
 
-// interface Props {
-//   searchParams: { q?: string };
-// }
+type Props = {
+  searchParams: {
+    q: string | undefined;
+  };
+};
 
-export default function Search() {
-  // const query = searchParams?.q; // Acesso direto ao parâmetro
-
-  // if (!query) {
-  //   redirect("/"); // Redireciona caso não exista a query
-  // }
+export default async function Page({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams;
+  if (!resolvedSearchParams.q) redirect("/home");
 
   return (
     <div>
-      {/* <GeneralHeader backHref="/">
-        <SearchInput defaultValue={query} />
-      </GeneralHeader> */}
+      <GeneralHeader backHref="/home">
+        <SearchInput defaultValue={resolvedSearchParams.q} />
+      </GeneralHeader>
       <div className="border-t-2 border-[#161616]">
         <TimelineItem tweet={tweet} />
         <TimelineItem tweet={tweet} />

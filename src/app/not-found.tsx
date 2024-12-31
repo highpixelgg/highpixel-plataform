@@ -14,19 +14,18 @@ export default function NotFound() {
   return (
     <div>
       <Header background={true} />
-      <div className="absolute mt-24 flex h-full w-full items-center justify-center lg:mt-0">
-        <div className="mx-5 flex flex-col items-center justify-center gap-14 px-6 lg:mx-auto lg:mt-0 lg:flex-row">
+      <div className="mt-44 mb-48 lg:mb-0 flex h-screen w-full items-center justify-center lg:mt-0">
+        <div className="mx-5 flex flex-col items-center justify-center lg:gap-14 lg:flex-row">
           <Image
             src="/detercontagem.svg"
             alt="404"
-            width={400}
-            height={550}
+            width={360}
+            height={360}
             quality={100}
-            className="-z-10 h-auto"
           />
           <div className="flex w-full flex-col gap-10 lg:w-[345px]">
-            <div className="flex flex-col gap-2">
-              <h2 className="-z-10 text-8xl font-bold text-[#E6DD06]">
+            <div className="flex flex-col mt-3">
+              <h2 className="lg:text-8xl text-7xl font-bold text-[#E6DD06]">
                 432...
               </h2>
               <span className="text-3xl font-bold text-[#FFFFFF]">

@@ -57,19 +57,19 @@ export default function FormLogin() {
             </Redirect>
           </div>
 
-          <Button label="Entrar" size={1} />
+          <Button label="Entrar" size={1} background="white" />
 
           <div className="space-x-1 text-center text-zinc-400">
             <span>Não tem uma conta ainda?</span>
             <Redirect
-              href="/register"
+              href="/signup"
               className="text-[#E6DD06] transition-all hover:brightness-75"
             >
               Registre aqui!
             </Redirect>
           </div>
 
-          <div className="flex items-center justify-center gap-4 text-zinc-400">
+          {/* <div className="flex items-center justify-center gap-4 text-zinc-400">
             <span>Ou continue com:</span>
             <button
               type="button"
@@ -85,7 +85,7 @@ export default function FormLogin() {
               />
               Google
             </button>
-          </div>
+          </div> */}
         </div>
       </form>
     </div>

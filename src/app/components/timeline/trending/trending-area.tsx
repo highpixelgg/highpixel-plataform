@@ -9,8 +9,6 @@ export const TrendingArea = () => {
       <div className="flex flex-col gap-4 p-6 pt-0">
         <TrendingItem label="#GtecNaoTrabalhaMais?" count={2066} />
         <TrendingItem label="#ValdemirParaPresidente" count={1042} />
-        <TrendingItem label="#MeContrata" count={1042} />
-        <TrendingItemSkeleton />
         <TrendingItemSkeleton />
       </div>
     </div>

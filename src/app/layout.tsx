@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import {
-  Krona_One,
   Darker_Grotesque,
-  Rubik_Scribble,
+  Krona_One,
   Poppins,
   Rubik,
+  Rubik_Scribble,
 } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const FontPoppins = Poppins({
   subsets: ["latin"],
@@ -57,9 +58,11 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={`${FontPoppins.variable} ${FontKronaOne.variable} ${FontDarkerGrotesque.variable} ${FontRubikScribble.variable} ${FontRubik.variable}`}
+      className={`dark ${FontPoppins.variable} ${FontKronaOne.variable} ${FontDarkerGrotesque.variable} ${FontRubikScribble.variable} ${FontRubik.variable}`}
     >
-      <body className="bg-black">{children}</body>
+      <body className="bg-black">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
