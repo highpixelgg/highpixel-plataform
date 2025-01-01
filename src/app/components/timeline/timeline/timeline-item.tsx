@@ -34,7 +34,7 @@ export const TimelineItem = ({ tweet, hideComments }: Props) => {
       <div className="flex-1 ml-1">
         <div className="flex flex-wrap items-center gap-x-3">
           <div className="text-lg font-bold">
-            <Link href={`/${tweet.user.slug}`}>{tweet.user.name}</Link>
+            <Link href={`/me/${tweet.user.slug}`}>{tweet.user.name}</Link>
           </div>
           <div className="text-sm font-normal text-[#72767A]">
             @{tweet.user.slug} · {formatRelativeTime(tweet.dataPost)}

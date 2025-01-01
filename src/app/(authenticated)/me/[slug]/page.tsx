@@ -5,14 +5,13 @@ import { Button } from "@/app/components/ui/button";
 import { user } from "@/data/user";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
   const isMe = true;
 
   return (
-    <div className="w-screen lg:max-w-xl bg-black text-white">
+    <div className="w-screen bg-black text-white lg:max-w-xl">
       <GeneralHeader backHref="/home">
         <div className="text-lg font-bold">{user.name}</div>
         <div className="text-xs text-gray-500">{user.postCounter} posts</div>
@@ -24,7 +23,12 @@ export default function Page() {
         ></div>
         <div className="-mt-12 flex items-end justify-between px-6">
           <div className="relative h-24 w-24">
-            <AvatarUser src={user.avatar} isBorded={false} size="lg" className="w-24 h-24"/>
+            <AvatarUser
+              src={user.avatar}
+              isBorded={false}
+              size="lg"
+              className="h-24 w-24"
+            />
           </div>
           <div className="w-32">
             {isMe && (
@@ -48,7 +52,7 @@ export default function Page() {
             <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={faLink} className="size-5" />
               <Link
-                className="font-rubik font-extralight text-blue-500 hover:text-blue-400 text-sm lg:text-base"
+                className="font-rubik text-sm font-extralight text-blue-500 hover:text-blue-400 lg:text-base"
                 target="_blank"
                 href={user.link}
               >

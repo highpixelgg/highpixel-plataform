@@ -1,7 +1,8 @@
-'use client'
+"use client";
 
+import { user } from "@/data/user";
 import {
-  Avatar,
+  Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -14,11 +15,10 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import LogoLR from "../../../../public/logo-low-racing.svg";
-
-import {user} from '@/data/user'
+import { AvatarStatus } from "./avatar";
 
 export const Logo = () => {
-  return <Image src={LogoLR} alt="logo" className="w-20 h-20" />;
+  return <Image src={LogoLR} alt="logo" className="h-20 w-20" />;
 };
 
 export const Header = () => {
@@ -30,18 +30,18 @@ export const Header = () => {
 
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Profile
+          <Link color="foreground" href="/marketplace">
+            Discover
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link aria-current="page" color="secondary" href="#">
-            Home
+          <Link aria-current="page" color="success" href="/home">
+            Início
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Discover
+          <Link color="foreground" href="/discover">
+            Marketplace
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -49,33 +49,26 @@ export const Header = () => {
       <NavbarContent as="div" justify="end">
         <Dropdown placement="bottom-end">
           <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-              color="secondary"
-              name="Julio Developer"
-              size="sm"
-              src={user.avatar}
-            />
+            <Button
+              className="h-full rounded-full bg-transparent"
+              disableRipple
+            >
+              <AvatarStatus src={user.avatar} color="success" />
+            </Button>
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
-              <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">zoey@example.com</p>
+            <DropdownItem key="profile" href="/profile">
+              Perfil
             </DropdownItem>
-            <DropdownItem key="settings">My Settings</DropdownItem>
-            <DropdownItem key="team_settings">Team Settings</DropdownItem>
-            <DropdownItem key="analytics">Analytics</DropdownItem>
-            <DropdownItem key="system">System</DropdownItem>
-            <DropdownItem key="configurations">Configurations</DropdownItem>
-            <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-            <DropdownItem key="logout" color="danger">
-              Log Out
+            <DropdownItem key="settings" href="/settings">
+              Configurações
+            </DropdownItem>
+            <DropdownItem key="logout" href="/logout" color="danger">
+              Sair
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>
     </Navbar>
   );
-}
+};

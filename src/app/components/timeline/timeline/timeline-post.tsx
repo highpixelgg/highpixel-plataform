@@ -33,7 +33,7 @@ export const TimelinePost = () => {
             <FontAwesomeIcon icon={faImage} className="size-6" />
           </div>
           <div className="w-28">
-            <Button label="Postar" size={3} onClick={handlePostClick} />
+            <Button label="Postar" size={2} onClick={handlePostClick} background="white"/>
           </div>
         </div>
       </div>

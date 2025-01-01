@@ -1,7 +1,7 @@
-import { Avatar } from "@nextui-org/react";
+import { Avatar, Badge } from "@nextui-org/react";
 
 interface Props {
-  isBorded: boolean;
+  isBorded?: boolean;
   color?: "default" | "primary" | "secondary" | "success" | "warning";
   src: string;
   size?: "lg" | "sm" | "md";
@@ -27,3 +27,12 @@ export const AvatarUser = ({
     </div>
   );
 };
+
+export const AvatarStatus = ({ color, src }: Props) => {
+  return (
+    <Badge color={color} content="" placement="bottom-right" shape="circle">
+      <Avatar radius="full" src={src} />
+    </Badge>
+  );
+};
+

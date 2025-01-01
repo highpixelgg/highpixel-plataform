@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/app/components/ui/header";
+import {Header} from "@/app/components/ui/header";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -13,8 +13,8 @@ export default function NotFound() {
 
   return (
     <div>
-      <Header background={true} />
-      <div className="mt-44 mb-48 lg:mb-0 flex h-screen w-full items-center justify-center lg:mt-0">
+      <Header />
+      <div className="mt-5 mb-10 lg:mb-0 lg:mt-20 flex w-full items-center justify-center">
         <div className="mx-5 flex flex-col items-center justify-center lg:gap-14 lg:flex-row">
           <Image
             src="/detercontagem.svg"
