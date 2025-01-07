@@ -11,13 +11,13 @@ type Props = {
 };
 
 export default async function Page({ searchParams }: Props) {
-  const resolvedSearchParams = searchParams;
-  if (!resolvedSearchParams.q) redirect("/home");
+  // const resolvedSearchParams = searchParams;
+  // if (!resolvedSearchParams.q) redirect("/home");
 
   return (
     <div>
       <GeneralHeader backHref="/home">
-        <SearchInput defaultValue={resolvedSearchParams.q} />
+        <SearchInput defaultValue={'/home'} />
       </GeneralHeader>
       <div className="border-t-2 border-[#161616]">
         <TimelineItem tweet={tweet} />

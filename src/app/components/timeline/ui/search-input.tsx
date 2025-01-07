@@ -16,13 +16,13 @@ export const SearchInput = ({ defaultValue, hideOnSearch }: Props) => {
   const [searchInput, setSearchInput] = useState(defaultValue ?? "");
 
   const handleSearchEnter = () => {
-    if (searchInput) {
-      router.push("/search?q=" + encodeURIComponent(searchInput));
-      setSearchInput('');
-    }
+    // if (searchInput) {
+    //   router.push("/search?q=" + encodeURIComponent(searchInput));
+    //   setSearchInput('');
+    // }
   };
 
-  if (hideOnSearch && pathname === "/search") return null;
+  // if (hideOnSearch && pathname === "/search") return null;
 
   return (
     <Input
