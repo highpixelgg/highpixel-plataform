@@ -6,12 +6,12 @@ import { redirect } from "next/navigation";
 
 type Props = {
   searchParams: {
-    q: string | undefined;
+    q: string;
   };
 };
 
 export default async function Page({ searchParams }: Props) {
-  const resolvedSearchParams = await searchParams;
+  const resolvedSearchParams = searchParams;
   if (!resolvedSearchParams.q) redirect("/home");
 
   return (
