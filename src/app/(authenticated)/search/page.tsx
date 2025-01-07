@@ -4,13 +4,13 @@ import { SearchInput } from "@/app/components/timeline/ui/search-input";
 import { tweet } from "@/data/tweet";
 import { redirect } from "next/navigation";
 
-type Props = {
-  searchParams: {
-    q: string;
-  };
-};
+// type Props = {
+//   searchParams: {
+//     q: string;
+//   };
+// };
 
-export default async function Page({ searchParams }: Props) {
+export default async function Page() {
   // const resolvedSearchParams = searchParams;
   // if (!resolvedSearchParams.q) redirect("/home");
 
