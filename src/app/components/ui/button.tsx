@@ -1,4 +1,4 @@
-import {ExternalLink} from 'lucide-react'
+import { ExternalLink } from "lucide-react";
 
 interface ButtonProps extends React.ComponentProps<"button"> {}
 
@@ -7,17 +7,24 @@ type Props = {
   onClick?: () => void;
   size: 1 | 2 | 3 | 4;
   borderounded?: boolean;
-  background?: 'white' | 'transparent';
-  icon?: 'link'
+  background?: "white" | "transparent";
+  icon?: "link";
 };
 
-export const Button = ({ label, onClick, size, borderounded, icon, background }: Props) => {
+export const Button = ({
+  label,
+  onClick,
+  size,
+  borderounded,
+  icon,
+  background,
+}: Props) => {
   return (
     <button
-      className={`--font-rubik flex cursor-pointer items-center justify-center rounded-[10px] p-3 text-xl font-medium text-black transition-all hover:brightness-75 ${size === 1 && "h-14 text-lg"} ${size === 2 && "h-10 w-32 text-sm lg:text-base"} ${size === 3 && "size-11 text-xs font-bold"} ${size === 4 && "h-7 w-20 text-xs font-bold"} ${borderounded === true && "rounded-full"} ${background === 'white' && 'bg-[#FFFFFF]'} ${background === 'transparent' && 'bg-transparent'}`}
+      className={`--font-rubik flex cursor-pointer items-center justify-center rounded-[10px] p-3 text-xl font-medium text-black transition-all hover:brightness-75 ${size === 1 && "h-14 text-lg"} ${size === 2 && "inline-block h-10 w-[120px] text-[15px] lg:w-32 lg:text-base"} ${size === 3 && "size-11 text-xs font-bold"} ${size === 4 && "h-7 w-20 text-xs font-bold"} ${borderounded === true && "rounded-full"} ${background === "white" && "bg-[#FFFFFF]"} ${background === "transparent" && "bg-transparent"}`}
       onClick={onClick}
     >
-      {icon === 'link' && <ExternalLink size={40} color='#c8c8c8' />}
+      {icon === "link" && <ExternalLink size={40} color="#c8c8c8" />}
       {label}
     </button>
   );
