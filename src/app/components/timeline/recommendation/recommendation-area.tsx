@@ -1,4 +1,4 @@
-import { user, valdemir } from "@/data/user";
+import { valdemir, user } from "@/data/user";
 import {
   RecommendationItem,
   RecommendationItemSkeleton,
@@ -6,7 +6,7 @@ import {
 
 export const RecommendationArea = () => {
   return (
-    <div className="rounded-3xl border border-[#3b3b3b] bg-[#151515]">
+    <div className="w-96 rounded-3xl border border-[#3b3b3b] bg-[#151515] lg:w-96">
       <h2 className="--font-rubik p-6 text-xl font-medium text-white">
         Quem seguir
       </h2>

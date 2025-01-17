@@ -12,10 +12,10 @@ export default function NotFound() {
   }
 
   return (
-    <div>
+    <div className="w-full min-h-screen">
       <Header />
-      <div className="mt-5 mb-10 lg:mb-0 lg:mt-20 flex w-full items-center justify-center">
-        <div className="mx-5 flex flex-col items-center justify-center lg:gap-14 lg:flex-row">
+      <div className="mt-5 h-full mb-10 lg:mb-0 lg:mt-36 flex w-full items-center justify-center">
+        <div className="mx-10 flex flex-col items-center justify-center lg:gap-14 lg:flex-row">
           <Image
             src="/detercontagem.svg"
             alt="404"
@@ -23,8 +23,8 @@ export default function NotFound() {
             height={360}
             quality={100}
           />
-          <div className="flex w-full flex-col gap-10 lg:w-[345px]">
-            <div className="flex flex-col mt-3">
+          <div className="flex w-[300px] lg:w-[500px] h-full flex-col gap-10 justify-center mt-10 mx-5">
+            <div className="flex flex-col">
               <h2 className="lg:text-8xl text-7xl font-bold text-[#E6DD06]">
                 432...
               </h2>

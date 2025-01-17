@@ -16,11 +16,14 @@ const config = {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
     },
     extend: {
+      spacing: {
+        'sidebaar': '250px',
+      },
+      maxHeight: {
+        'content': '800px',
+      },
       fontFamily: {
         darker: ["var(--font-darker-grotesque)"],
         krona: ["var(--font-krona-one)"],

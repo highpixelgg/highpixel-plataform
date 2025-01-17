@@ -13,7 +13,7 @@ type Props = {
 
 export const PublicityItem = ({ user, description, url }: Props) => {
   return (
-    <div className="flex w-80 items-center">
+    <div className="flex w-full items-center">
       <div className="size-10 h-14 w-28 overflow-hidden rounded-xl relative">
         <Image
           src={user.cover ?? ""}

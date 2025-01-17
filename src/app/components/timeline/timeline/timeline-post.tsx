@@ -4,7 +4,6 @@ import { Button } from "@/app/components/ui/button";
 import { user } from "@/data/user";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import { AvatarUser } from "../../ui/avatar";
 
 export const TimelinePost = () => {
@@ -12,7 +11,7 @@ export const TimelinePost = () => {
   const handlePostClick = () => {};
 
   return (
-    <div className="flex gap-6 border-b border-[#161616] px-8 py-6 text-[#72767A]">
+    <div className="flex max-w-2xl gap-6 border-b border-[#161616] px-8 py-6 text-[#72767A]">
       <div className="relative h-11 w-11">
         <AvatarUser isBorded={false} src={user.avatar} />
       </div>
@@ -33,7 +32,12 @@ export const TimelinePost = () => {
             <FontAwesomeIcon icon={faImage} className="size-6" />
           </div>
           <div className="w-28">
-            <Button label="Postar" size={2} onClick={handlePostClick} background="white"/>
+            <Button
+              label="Postar"
+              size={2}
+              onClick={handlePostClick}
+              background="white"
+            />
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { tweet, tweetValdemir } from "@/data/tweet";
 
 export default function Page() {
   return (
-    <div className="text-white w-screen">
+    <div className="text-white max-w-2xl">
       <GeneralHeader backHref="/home">
         <div className="text-lg font-bold">Voltar</div>
       </GeneralHeader>

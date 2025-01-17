@@ -2,7 +2,7 @@ import ContentMain from "@/app/components/dashboard/content-main";
 
 export default function Dashboard() {
   return (
-    <div className="h-screen w-screen bg-[#1B1B1B]">
+    <div className="w-full min-h-screen bg-[#1B1B1B]">
       <ContentMain />
     </div>
   );
