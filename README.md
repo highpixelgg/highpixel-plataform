@@ -1,4 +1,4 @@
-  # Meteor 🥏
+  # Low Racing Frontend
   ### Preview
   <img src="https://i.postimg.cc/wjVSLDCD/Home.png"/>
   
@@ -20,4 +20,4 @@
   ```
 
   <br><br>
-  Made with ❤️ by the Low Racing Team.
+  Made with ❤️ by Julio Developer.
