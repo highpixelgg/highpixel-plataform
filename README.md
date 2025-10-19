@@ -1,6 +1,6 @@
   # High Pixel Plataform
   ### Preview
-  <img src="https://i.postimg.cc/FF23PFZ2/Home.png"/>
+  <img src="https://cdn.discordapp.com/attachments/886686024393187438/1429287386810159114/-_Home.png?ex=68f5971b&is=68f4459b&hm=1817b0d2b64a93419ca655700b46fd2281f844a939240d557b869d98f1b60711"/>
   
   ## Introduction
   HighPixel Plataform is the interface for the HighPixel. This application was built using React and Next.js to provide a responsive and high-performance experience for users.
