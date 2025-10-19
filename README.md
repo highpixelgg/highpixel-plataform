@@ -1,9 +1,9 @@
-  # Low Racing Frontend
+  # High Pixel Plataform
   ### Preview
-  <img src="https://i.postimg.cc/wjVSLDCD/Home.png"/>
+  <img src="https://i.postimg.cc/FF23PFZ2/Home.png"/>
   
   ## Introduction
-  Meteor is the interface for the Low Racing platform. This application was built using React and Next.js to provide a responsive and high-performance experience for users.
+  HighPixel Plataform is the interface for the HighPixel. This application was built using React and Next.js to provide a responsive and high-performance experience for users.
 
   ## Pre-requisites
   NodeJS: [Node.js](https://nodejs.org/)
